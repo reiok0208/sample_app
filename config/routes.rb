@@ -5,8 +5,12 @@ Rails.application.routes.draw do
 
   #ユーザーがリクエストしたとき一番最初に通る場所
   #HTTPメソッド 'URL' => 'コントローラ#アクション'
-  get 'top' => 'homes#top'
+  get 'top' => 'homes#top' #GETは、<a>タグで画面遷移する場合に使う
   #topをリクエストされたからhomesコントローラのtopアクションに移動
 
+
+
+  get 'todolists/new'
+  post 'todolists' => 'todolists#create' #POSTは、<form>タグ等でデータ送信する場合に使う。
 
 end
