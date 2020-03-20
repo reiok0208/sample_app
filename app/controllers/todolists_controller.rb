@@ -11,8 +11,19 @@ class TodolistsController < ApplicationController
         list = List.new(list_params)
         # DBへ保存する
         list.save
-        # トップ画面へリダイレクト
-        redirect_to '/top'
+        redirect_to todolist_path(list.id) # 詳細画面へリダイレクト
+  end
+
+  def index
+  	    #データベース内のすべてのデータを取り出すには、Listモデルに対して.allメソッドを使います。
+  	    @lists = List.all
+  	    #このインスタンス変数には、すべてのデータが取り出されて格納されるため、インスタンス変数名を複数形にしています。
+  end
+
+  def show
+  	    @list = List.find(params[:id])
+  	    #たとえば、URLが/todolist/1の場合、params[:id] と記述すると、id==1を取り出せます。
+  	    #id==1のデータをfindメソッドを利用してデータベースから取得し、@listへ格納します。
   end
 
 

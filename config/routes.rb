@@ -9,8 +9,13 @@ Rails.application.routes.draw do
   #topをリクエストされたからhomesコントローラのtopアクションに移動
 
 
-
   get 'todolists/new'
   post 'todolists' => 'todolists#create' #POSTは、<form>タグ等でデータ送信する場合に使う。
+
+  get 'todolists' => 'todolists#index'
+  get 'todolists/:id' => 'todolists#show', as: 'todolist'
+  #as~ 名前付きルートとは_pathや_urlなどを使ってリンク先のURLを指定するヘルパーです。
+  #as~ 'todolists#show'の設定を、todolist(短縮url)として利用できる？？？
+  # :idは　.../todolists/1 や .../todolists/3 に該当する
 
 end

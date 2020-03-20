@@ -1,3 +1,6 @@
+# DMM WEBCAMPコンテンツ【Railsを学ぼう】
+DMM WEBCAMPの学習コンテンツRailsを学ぼうの3章〜９章の演習問題です。
+
 # README
 
 This README would normally document whatever steps are necessary to get the
