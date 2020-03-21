@@ -10,6 +10,9 @@ new.html.erbファイルは、データの入力のみを担当-->
     <h4>本文</h4>
     <%= f.text_area :body %> <!-- lists.rb(テーブルの設計図)に記入したカラムbody -->
 
+    <h4>画像</h4>
+    <%= f.attachment_field :image %>
+
     <%= f.submit '投稿' %> <!-- 「投稿」ボタンを押すと、ルーティングで設定したとおり、todolistsコントローラのcreateアクションが呼び出される。 -->
 
 <% end %>

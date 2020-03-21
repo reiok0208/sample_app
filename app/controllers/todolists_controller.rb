@@ -43,7 +43,7 @@ class TodolistsController < ApplicationController
   private
 
   def list_params
-        params.require(:list).permit(:title, :body)
+        params.require(:list).permit(:title, :body, :image)
         #params.require(:モデル名).permit(:カラム名１, :カラム名２...)
         #ストロングパラメータは、フォームの入力値をコントローラのcreateやupdateに渡す役割があります。
         #requireでデータのオブジェクト名(ここでは:list)を指定し、permitでキー(:title,:body)を指定しています。
