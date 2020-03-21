@@ -24,6 +24,19 @@ class TodolistsController < ApplicationController
   	    @list = List.find(params[:id])
   	    #たとえば、URLが/todolist/1の場合、params[:id] と記述すると、id==1を取り出せます。
   	    #id==1のデータをfindメソッドを利用してデータベースから取得し、@listへ格納します。
+  	    #インスタンス変数を経由することでControllerからViewへ変数を渡すことができます。
+  	    #paramsとはRailsで送られてきた値を受け取るためのメソッドです。
+  	    #送られてくる情報(リクエストパラメータ)は主に、getのクエリパラメータとPostでformを使って送信されるデータの2つです。
+  end
+
+  def edit
+  	    @list = List.find(params[:id])
+  end
+
+  def update
+  	    list = List.find(params[:id])
+        list.update(list_params)
+        redirect_to todolist_path(list.id)
   end
 
 
